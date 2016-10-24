@@ -3,10 +3,10 @@ package org.krugdev.rservices;
 import java.net.URI;
 import java.util.List;
 
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.UriBuilder;
 
 import org.jboss.resteasy.spi.BadRequestException;
-import org.jboss.resteasy.spi.NotFoundException;
 import org.krugdev.auxiliary.Platform;
 import org.krugdev.auxiliary.ResourceNotFoundException;
 import org.krugdev.domain.player.Player;
@@ -30,7 +30,6 @@ public class PlayerResource implements PlayerResourceRestAnnotations {
 		builder.scheme("http")
 			.host("{hostname}")
 			.queryParam("param", "{param}");
-		System.out.println(builder.toTemplate());
 		UriBuilder clone = builder.clone();
 		URI uri = clone.build("example.com", "333", "value");
 		System.out.println(uri.toString());
