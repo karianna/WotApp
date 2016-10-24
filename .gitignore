@@ -1,0 +1,7 @@
+# Ignore developer specific IntelliJ files
+.idea/
+**/*.iml
+
+# Ignore Maven target directories
+**/target/
+target/
